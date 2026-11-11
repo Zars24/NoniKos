@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        @apply bg-ivory text-ink antialiased;
+    }
+
+    .dark body {
+        @apply bg-dark-bg text-dark-ink;
+    }
+
+    :focus-visible {
+        @apply outline-none ring-2 ring-champagne ring-offset-2 ring-offset-ivory;
+    }
+
+    .dark :focus-visible {
+        @apply ring-dark-champagne ring-offset-dark-bg;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer components {
+    .tabular {
+        font-variant-numeric: tabular-nums;
+    }
+
+    .card {
+        @apply rounded-xl border border-stone bg-white shadow-card;
+    }
+
+    .dark .card {
+        @apply border-dark-border bg-dark-surface;
+    }
+
+    .surface-muted {
+        @apply bg-ivory;
+    }
+
+    .dark .surface-muted {
+        @apply bg-dark-elevated;
+    }
+
+    .label {
+        @apply block text-sm font-medium text-ink;
+    }
+
+    .dark .label {
+        @apply text-dark-ink;
+    }
+
+    .hint {
+        @apply text-xs text-sage;
+    }
+
+    .dark .hint {
+        @apply text-dark-sage;
+    }
+
+    .input {
+        @apply w-full rounded-lg border-stone bg-white text-sm text-ink shadow-sm placeholder:text-sage/70 focus:border-champagne focus:ring-champagne;
+    }
+
+    .dark .input {
+        @apply border-dark-border bg-dark-elevated text-dark-ink placeholder:text-dark-sage/60;
+    }
+
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .btn-primary {
+        @apply btn bg-brand text-white hover:bg-brand-deep;
+    }
+
+    .dark .btn-primary {
+        @apply bg-dark-champagne text-dark-bg hover:bg-champagne;
+    }
+
+    .btn-secondary {
+        @apply btn border border-stone bg-white text-ink hover:bg-ivory;
+    }
+
+    .dark .btn-secondary {
+        @apply border-dark-border bg-dark-elevated text-dark-ink hover:bg-dark-surface;
+    }
+
+    .btn-ghost {
+        @apply btn text-ink hover:bg-stone/50;
+    }
+
+    .dark .btn-ghost {
+        @apply text-dark-ink hover:bg-dark-elevated;
+    }
+
+    .btn-danger {
+        @apply btn bg-danger text-white hover:bg-danger/90;
+    }
+
+    .nav-item {
+        @apply flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition hover:bg-white/10 hover:text-white;
+    }
+
+    .nav-item-active {
+        @apply bg-white/10 text-white;
+    }
+
+    .table-base {
+        @apply min-w-full divide-y divide-stone text-sm;
+    }
+
+    .dark .table-base {
+        @apply divide-dark-border;
+    }
+
+    .table-base thead th {
+        @apply bg-ivory px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-sage;
+    }
+
+    .dark .table-base thead th {
+        @apply bg-dark-elevated text-dark-sage;
+    }
+
+    .table-base tbody td {
+        @apply whitespace-nowrap px-4 py-3;
+    }
+
+    .table-base tbody tr {
+        @apply border-b border-stone/70;
+    }
+
+    .dark .table-base tbody tr {
+        @apply border-dark-border/70;
+    }
+
+    .page-title {
+        @apply text-2xl font-semibold tracking-tight text-ink;
+    }
+
+    .dark .page-title {
+        @apply text-dark-ink;
+    }
+
+    .skip-link {
+        @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-white;
+    }
+}
+
+/* Print-friendly reports: drop chrome, keep the table readable on paper. */
+@media print {
+    aside,
+    header,
+    nav,
+    .skip-link,
+    .no-print {
+        display: none !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    main {
+        padding: 0 !important;
+    }
+
+    .card {
+        border-color: #bbb !important;
+        box-shadow: none !important;
+        break-inside: avoid;
+    }
+
+    .table-base {
+        font-size: 11px;
+    }
+
+    a[href]::after {
+        content: '';
+    }
+}
