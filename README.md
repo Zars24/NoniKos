@@ -198,8 +198,8 @@ Pastikan perangkat sudah memiliki:
 ### 1. Clone Repository
 
 ```bash
-git clone <URL_REPOSITORY_GITHUB>
-cd nonikos
+git clone https://github.com/Zars24/NoniKos.git
+cd NoniKos
 ```
 
 ### 2. Instal Dependensi
