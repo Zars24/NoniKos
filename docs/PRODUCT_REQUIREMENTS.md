@@ -2,7 +2,7 @@
 
 **Status:** implemented baseline. This document records what the product does today, not aspirations.
 
-Source of truth for scope: `docs/README.md`. Business rules: `docs/BUSINESS_RULES.md`. Permissions: `docs/PERMISSIONS.md`.
+Project overview: [README.md](../README.md). Business rules: [BUSINESS_RULES.md](BUSINESS_RULES.md). Permissions: [PERMISSIONS.md](PERMISSIONS.md).
 
 ## Target users
 
