@@ -367,7 +367,6 @@ Dokumentasi teknis tambahan tersedia pada folder `docs/`.
 | `docs/PERMISSIONS.md` | Hak akses pengguna |
 | `docs/DESIGN_SYSTEM.md` | Panduan desain antarmuka |
 | `docs/ROADMAP.md` | Roadmap pengembangan |
-| `docs/IMPLEMENTATION_STATUS.md` | Status implementasi |
 | `docs/SECURITY.md` | Dokumentasi keamanan |
 | `docs/TESTING.md` | Panduan pengujian |
 | `docs/BACKUP_RESTORE.md` | Panduan backup dan restore |
